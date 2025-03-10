@@ -1,24 +1,12 @@
-<!DOCTYPE html>
-<html>
-<body>
+<h1>Home Page</h1>
+<h2>{{$name}}</h2>
+<h2>{{rand()}}</h2>
+<h2>{{$users[2]}}</h2>
 
-<?php
-$favcolor = "yellow";
-
-switch ($favcolor) {
-  case "red":
-    echo "Your favorite color is red!";
-    break;
-  case "blue":
-    echo "Your favorite color is blue!";
-    break;
-  case "green":
-    echo "Your favorite color is green!";
-    break;
-  default:
-    echo "Your favorite color is neither red, blue, nor green!";
-}
-?>
- 
-</body>
-</html>
+@if($name == 'Amit')
+    <h2>Hi Amit</h2>
+@elseif($name == 'Jane')
+    <h2>Hi Jane</h2>
+@else
+    <h2>Hi Guest</h2>
+@endif
