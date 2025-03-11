@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +16,16 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layout.base');
 });
 
-Route::get('/user-home', [UserController::class, 'userHome']);
+Route::view('/user-form','user-form');
+Route::post('/userform',[FormController::class, 'userForm']);
+
+Route::get('/home', [UserController::class, 'home']);
+Route::get('/user-test', [UserController::class, 'userHome']);
+Route::get('/user-welcome', [UserController::class, 'userWelcome']);
+Route::get('/user-about', [UserController::class, 'userAbout']);
 // Route::get('/user-home', function () {
 //     return view('home');
 // });
